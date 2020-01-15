@@ -1,17 +1,30 @@
 package discriminatorbug;
 
 import org.bson.codecs.pojo.annotations.BsonDiscriminator;
+import org.bson.codecs.pojo.annotations.BsonId;
+import org.bson.types.ObjectId;
 
 @BsonDiscriminator
 public abstract class TheAbstractClass {
 
-  protected String aParameter;
+  @BsonId
+  protected ObjectId id;
 
-  public String getaParameter() {
-    return aParameter;
+  protected String parameter;
+
+  public ObjectId getId() {
+    return id;
   }
 
-  public void setaParameter(String aParameter) {
-    this.aParameter = aParameter;
+  public void setId(ObjectId id) {
+    this.id = id;
+  }
+
+  public String getParameter() {
+    return parameter;
+  }
+
+  public void setParameter(String parameter) {
+    this.parameter = parameter;
   }
 }
